@@ -1,4 +1,5 @@
 display = function(target) {
+    window.target = target;
 	//	iframe
 	//	======
 		var _iframeElement = document.createElement('iframe');

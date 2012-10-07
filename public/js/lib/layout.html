@@ -23,6 +23,14 @@ hr{background:none;color:none;border:none;border-bottom:1px solid #aaa;margin-bo
 #clippsis-over-toolbox ul li:first-child{margin-bottom:100px;}
 #clippsis-over-toolbox ul li:first-child a{border-top:none;}
 </style>
+<script type="text/javascript">
+$(document).ready(
+	function()
+	{
+		$('#mypretty').html(window.parent.target.html());
+	}
+);
+</script>
 <script>$(function(){
 $('#clippsis-over-toolbox').height($(window).height());
 });
