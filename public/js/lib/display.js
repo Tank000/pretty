@@ -8,7 +8,7 @@ display = function(target) {
 			+		' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
 			+	'<html id="html" xmlns="http://www.w3.org/1999/xhtml">'
 			+	'<head>'
-			+		'<link rel="stylesheet" href="/css/style.css" type="text/css" />'
+			+		'<link rel="stylesheet" href="https://raw.github.com/Tank000/pretty/master/public/css/style.css" type="text/css" />'
 			+	'</head>'
 			+	'<body id="body">'
 			+		'<div id="bodyContent"></div>'
@@ -28,7 +28,7 @@ display = function(target) {
 			_cssText = ''
 			+	'#readable_iframe { '
 			+		'margin: 0; padding: 0; border: none; '
-			+		'position: absolute; '
+			+		'position: fixed; '
 			+		'width: 100%; height: 100%; '
 			+		'top: 0; left: 0; '
 			+		'z-index: 2147483647 !important; '
@@ -53,5 +53,8 @@ display = function(target) {
 			_doc.write(_iframeHTML);
 			_doc.close();
     var body_content = _doc.getElementById('bodyContent');
+    taget.children(*).removeAttr("class");
+    taget.children(*).removeAttr("id");
+    taget.children(*).removeAttr("style");
     body_content.innerHTML = target.html();
 }

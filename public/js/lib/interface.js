@@ -301,7 +301,6 @@ SelectorGadget.prototype.showXPath = function(e) {
   // prompt("The CSS selector '" + path + "' as an XPath is shown below.  Please report any bugs that you find with this converter.", 
   // self.prediction_helper.cssToXPath(path));
   // alert(self.prediction_helper.cssToXPath(path));
-  console.log(path);
   display(jQuery(path));
 };
 
@@ -353,7 +352,7 @@ SelectorGadget.prototype.makeInterface = function() {
     }
   }).addClass('sg_ignore'));
 
-  this.sg_div.append(jQuery('<input type="button" value="确定"/>').bind("click", {'self': this}, this.showXPath).addClass('sg_ignore'));
+  this.sg_div.append(jQuery('<input type="button" value="确定选择"/>').bind("click", {'self': this}, this.showXPath).addClass('sg_ignore'));
 
   this.sg_div.append(jQuery('<input type="button" value="帮助"/>').bind("click", {'self': this}, this.showHelp).addClass('sg_ignore'));
 
