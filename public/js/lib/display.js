@@ -53,8 +53,8 @@ display = function(target) {
 			_doc.write(_iframeHTML);
 			_doc.close();
     var body_content = _doc.getElementById('bodyContent');
-    // taget.children(*).removeAttr("class");
-    // taget.children(*).removeAttr("id");
-    // taget.children(*).removeAttr("style");
+    target.children().removeAttr("class");
+    target.children('*').removeAttr("id");
+    target.children('*').removeAttr("style");
     body_content.innerHTML = target.html();
 }
