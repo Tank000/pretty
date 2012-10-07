@@ -301,7 +301,13 @@ SelectorGadget.prototype.showXPath = function(e) {
   // prompt("The CSS selector '" + path + "' as an XPath is shown below.  Please report any bugs that you find with this converter.", 
   // self.prediction_helper.cssToXPath(path));
   // alert(self.prediction_helper.cssToXPath(path));
-  display(jQuery(path));
+  // 
+    var target = jQuery(path);
+    target.children().removeAttr("class");
+    target.children('*').removeAttr("id");
+    target.children('*').remove("script");
+    target.children('*').removeAttr("style");
+    display(target);
 };
 
 SelectorGadget.prototype.clearSelected = function(e) {

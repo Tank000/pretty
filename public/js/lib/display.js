@@ -1,24 +1,12 @@
 display = function(target) {
 	//	iframe
 	//	======
-		var 
-			_iframeElement = document.createElement('iframe'),
-			_iframeHTML = ''
-			+	'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"'
-			+		' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
-			+	'<html id="html" xmlns="http://www.w3.org/1999/xhtml">'
-			+	'<head>'
-			+		'<link rel="stylesheet" href="http://pretty.ap01.aws.af.cm/css/style.css" type="text/css" />'
-			+	'</head>'
-			+	'<body id="body">'
-			+		'<div id="bodyContent"></div>'
-			+	'</body>'
-			+	'</html>'
-		;
+		var _iframeElement = document.createElement('iframe');
 		_iframeElement.setAttribute('id', 'readable_iframe');
 		_iframeElement.setAttribute('frameBorder', '0');
 		_iframeElement.setAttribute('allowTransparency', 'true');
 		_iframeElement.setAttribute('scrolling', 'auto');
+		_iframeElement.setAttribute('src', 'http://pretty.ap01.aws.af.cm/js/lib/layout.html');
 	
 
 	//	css
@@ -52,9 +40,6 @@ display = function(target) {
 			_doc.open();
 			_doc.write(_iframeHTML);
 			_doc.close();
-    var body_content = _doc.getElementById('bodyContent');
-    target.children().removeAttr("class");
-    target.children('*').removeAttr("id");
-    target.children('*').removeAttr("style");
+    var body_content = _doc.getElementById('mypretty');
     body_content.innerHTML = target.html();
 }
