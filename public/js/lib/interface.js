@@ -327,7 +327,7 @@ SelectorGadget.prototype.clearSuggested = function() {
 };
 
 SelectorGadget.prototype.showHelp = function() {
-  alert("(Better help coming soon!  Please visit http://selectorgadget.com!  Please report bugs!)\n\nClick on a page element that you would like your selector to match (it will turn green). SelectorGadget will then generate a minimal CSS selector for that element, and will highlight (yellow) everything that is matched by the selector. Now click on a highlighted element to remove it from the selector (red), or click on an unhighlighted element to add it to the selector. Through this process of selection and rejection, SelectorGadget helps you to come up with the perfect CSS selector for your needs.\n\nHolding 'shift' while moving the mouse will let you select elements inside of other selected ones.");
+  window.open('http://pretty.ap01.aws.af.cm/');
 };
 
 SelectorGadget.prototype.makeInterface = function() {
@@ -341,7 +341,7 @@ SelectorGadget.prototype.makeInterface = function() {
   this.sg_div.append(path);
   this.clear_button = jQuery('<input type="button" value="Clear"/>').bind("click", {'self': this}, this.clearEverything).addClass('sg_ignore');
   this.sg_div.append(this.clear_button);
-  this.sg_div.append(jQuery('<input type="button" value="Toggle Position"/>').click(function() {
+  this.sg_div.append(jQuery('<input type="button" value="改变工具条位置"/>').click(function() {
     if (self.sg_div.hasClass('sg_top')) {
       self.sg_div.removeClass('sg_top').addClass('sg_bottom');
     } else {
@@ -351,7 +351,7 @@ SelectorGadget.prototype.makeInterface = function() {
 
   this.sg_div.append(jQuery('<input type="button" value="XPath"/>').bind("click", {'self': this}, this.showXPath).addClass('sg_ignore'));
 
-  this.sg_div.append(jQuery('<input type="button" value="Help"/>').bind("click", {'self': this}, this.showHelp).addClass('sg_ignore'));
+  this.sg_div.append(jQuery('<input type="button" value="帮助"/>').bind("click", {'self': this}, this.showHelp).addClass('sg_ignore'));
 
   this.sg_div.append(jQuery('<input type="button" value="X"/>').bind("click", {'self': this}, this.unbind).addClass('sg_ignore'));
 
