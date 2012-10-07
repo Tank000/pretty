@@ -282,7 +282,7 @@ SelectorGadget.prototype.setPath = function(prediction) {
   if (prediction && prediction.length > 0)
     this.path_output_field.value = prediction;
   else
-    this.path_output_field.value = 'No valid path found.';
+    this.path_output_field.value = '请选择想要获取的部分';
 };
 
 SelectorGadget.prototype.refreshFromPath = function(e) {
@@ -296,9 +296,13 @@ SelectorGadget.prototype.refreshFromPath = function(e) {
 SelectorGadget.prototype.showXPath = function(e) {
   var self = (e && e.data && e.data.self) || this;
   var path = self.path_output_field.value;
-  if (path == 'No valid path found.') return;
-  prompt("The CSS selector '" + path + "' as an XPath is shown below.  Please report any bugs that you find with this converter.", 
-         self.prediction_helper.cssToXPath(path));
+  if (path == '请选择想要获取的部分'||path=='') return;
+
+  // prompt("The CSS selector '" + path + "' as an XPath is shown below.  Please report any bugs that you find with this converter.", 
+  // self.prediction_helper.cssToXPath(path));
+  // alert(self.prediction_helper.cssToXPath(path));
+  console.log(path);
+  display(jQuery(path));
 };
 
 SelectorGadget.prototype.clearSelected = function(e) {
@@ -339,7 +343,7 @@ SelectorGadget.prototype.makeInterface = function() {
     }
   }).focus(function() { jQuery(this).select(); });
   this.sg_div.append(path);
-  this.clear_button = jQuery('<input type="button" value="Clear"/>').bind("click", {'self': this}, this.clearEverything).addClass('sg_ignore');
+  this.clear_button = jQuery('<input type="button" value="重新选择"/>').bind("click", {'self': this}, this.clearEverything).addClass('sg_ignore');
   this.sg_div.append(this.clear_button);
   this.sg_div.append(jQuery('<input type="button" value="改变工具条位置"/>').click(function() {
     if (self.sg_div.hasClass('sg_top')) {
@@ -349,7 +353,7 @@ SelectorGadget.prototype.makeInterface = function() {
     }
   }).addClass('sg_ignore'));
 
-  this.sg_div.append(jQuery('<input type="button" value="XPath"/>').bind("click", {'self': this}, this.showXPath).addClass('sg_ignore'));
+  this.sg_div.append(jQuery('<input type="button" value="确定"/>').bind("click", {'self': this}, this.showXPath).addClass('sg_ignore'));
 
   this.sg_div.append(jQuery('<input type="button" value="帮助"/>').bind("click", {'self': this}, this.showHelp).addClass('sg_ignore'));
 

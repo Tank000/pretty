@@ -8,7 +8,7 @@ display = function(target) {
 			+		' "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
 			+	'<html id="html" xmlns="http://www.w3.org/1999/xhtml">'
 			+	'<head>'
-			+		'<link rel="stylesheet" href="/style.css" type="text/css" />'
+			+		'<link rel="stylesheet" href="/css/style.css" type="text/css" />'
 			+	'</head>'
 			+	'<body id="body">'
 			+		'<div id="bodyContent"></div>'

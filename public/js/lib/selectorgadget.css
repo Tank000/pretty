@@ -148,11 +148,11 @@ div#_sg_div input{
     padding:5px 8px 6px 7px;
 }
 .sg_selected{
-  background-color:#0F0 !important;
+  background-color:#dff5e2 !important;
   background-image:none !important;
 }
 .sg_suggested{
-  background-color:#FF5 !important;
+  background-color:#ffffde !important;
   background-image:none !important;
 }
 .sg_border{
@@ -175,22 +175,25 @@ div#_sg_div input{
   padding:2px 0px 2px 5px !important;
 }
 .sg_border_red{
-  background-color:#F00 !important;
+  background-color:#f5dfdf !important;
+}
+.sg_border_grey{
+  background-color:#ececec !important;
 }
 .sg_highlighted{
 }
 .sg_rejected{
-  background-color:#F00 !important;
+  background-color:#f5dfdf !important;
   background-image:none !important;
 }
 img.sg_rejected{
-  border:5px solid #F00 !important;
+  border:5px solid #f5dfdf !important;
 }
 img.sg_suggested{
-  border:5px solid #FF5 !important;
+  border:5px solid #ffffde !important;
 }
 img.sg_selected{
-  border:5px solid #0F0 !important;
+  border:5px solid #f5dfdf !important;
 }
 #_sg_div.sg_top{
   top:5px !important;
